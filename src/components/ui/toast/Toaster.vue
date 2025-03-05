@@ -23,7 +23,7 @@ const { toasts } = useToast()
         </template>
         <ToastClose />
       </div>
-      <component :is="toast.action" />
+      <component :is="toast" />
     </Toast>
     <ToastViewport />
   </ToastProvider>

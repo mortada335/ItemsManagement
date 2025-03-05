@@ -75,7 +75,7 @@ const handleFormClose = () => {
   editingItem.value = null
 }
 
-const handleFormSubmit = async (item: Item | Omit<Item, 'id' | 'createdAt'>) => {
+const handleFormSubmit: any = async (item: Item) => {
   if ('id' in item) {
     const updated = await itemStore.updateItem(item.id, {
       name: item.name,
