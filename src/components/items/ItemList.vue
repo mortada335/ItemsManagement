@@ -75,7 +75,7 @@ const handleFormClose = () => {
   editingItem.value = null
 }
 
-const handleFormSubmit = async (item: Item) => {
+const handleFormSubmit = async (item: Item | Omit<Item, 'id' | 'createdAt'>) => {
   if ('id' in item) {
     const updated = await itemStore.updateItem(item.id, {
       name: item.name,
@@ -145,7 +145,7 @@ const handleRefresh = async () => {
     </div>
     <Alert
       v-if="itemStore.isUsingDummyData"
-      variant="warning"
+      variant="default"
       class="bg-yellow-50 dark:bg-yellow-950 border-yellow-200 dark:border-yellow-800"
     >
       <WifiOff class="h-4 w-4" />
