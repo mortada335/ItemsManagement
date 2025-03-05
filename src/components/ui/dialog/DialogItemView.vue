@@ -45,7 +45,7 @@ const formattedPrice = computed(() => {
   }).format(props.item.price)
 })
 
-const getPriorityColor = (priority: string) => {
+const getPriorityColor = (priority: string): string => {
   switch (priority?.toLowerCase()) {
     case 'high':
       return 'bg-red-100 text-red-800 dark:bg-red-900/30 dark:text-red-300'
@@ -89,7 +89,7 @@ const handleDelete = () => {
           <div class="flex items-start justify-between">
             <h3 class="text-xl font-semibold">{{ item.name }}</h3>
             <div class="flex gap-2">
-              <Badge :class="getPriorityColor(item.priority)">
+              <Badge :class="getPriorityColor(String(item.priority))">
                 {{ item.priority }}
               </Badge>
             </div>
