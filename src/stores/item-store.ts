@@ -6,6 +6,7 @@ import axios from 'axios'
 const API_URL = 'https://your-api-url.com/api/items'
 
 export interface Item {
+  priority(priority: any): unknown
   id: number
   name: string
   description: string
@@ -23,6 +24,7 @@ const dummyItems: Item[] = [
     category: 'Electronics',
     price: 1299.99,
     createdAt: new Date('2023-01-15'),
+    priority: (priority: any) => priority,
   },
   {
     id: 2,
@@ -31,6 +33,7 @@ const dummyItems: Item[] = [
     category: 'Electronics',
     price: 899.99,
     createdAt: new Date('2023-02-20'),
+    priority: (priority: any) => priority,
   },
   {
     id: 3,
@@ -39,6 +42,7 @@ const dummyItems: Item[] = [
     category: 'Furniture',
     price: 249.99,
     createdAt: new Date('2023-03-10'),
+    priority: (priority: any) => priority,
   },
   {
     id: 4,
@@ -47,6 +51,7 @@ const dummyItems: Item[] = [
     category: 'Kitchen',
     price: 129.99,
     createdAt: new Date('2023-04-05'),
+    priority: (priority: any) => priority,
   },
   {
     id: 5,
@@ -55,6 +60,7 @@ const dummyItems: Item[] = [
     category: 'Electronics',
     price: 199.99,
     createdAt: new Date('2023-05-12'),
+    priority: (priority: any) => priority,
   },
 ]
 

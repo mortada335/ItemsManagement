@@ -24,7 +24,7 @@ const emit = defineEmits<{
   submit: [item: Item | Omit<Item, 'id' | 'createdAt'>]
 }>()
 
-const formData = ref({
+const formData: any = ref({
   name: '',
   description: '',
   category: '',
